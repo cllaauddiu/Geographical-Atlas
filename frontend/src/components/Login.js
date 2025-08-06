@@ -1,4 +1,3 @@
-// frontend/src/components/Login.js
 import { useState } from "react";
 import "./Login.css";
 
@@ -6,10 +5,28 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault();
-    // TODO: Integrare backend autentificare
-    alert("Autentificare demo: " + email);
+    try {
+      const response = await fetch("http://localhost:8080/api/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ email, password })
+      });
+      const data = await response.json();
+      if (data.success) {
+        alert("Autentificare reușită! Bine ai venit, " + data.data.firstName + "!");
+        // Poți salva userul în localStorage dacă vrei:
+        // localStorage.setItem('user', JSON.stringify(data.data));
+        // Redirecționează utilizatorul dacă vrei
+      } else {
+        alert(data.message || "Eroare la autentificare");
+      }
+    } catch (err) {
+      alert("Eroare de rețea sau server: " + err.message);
+    }
   };
 
   return (
