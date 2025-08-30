@@ -4,17 +4,14 @@ public class LoginDto {
     
     private String email;
     private String password;
-    
-    // Constructor implicit
+
     public LoginDto() {}
-    
-    // Constructor cu parametri
+
     public LoginDto(String email, String password) {
         this.email = email;
         this.password = password;
     }
-    
-    // Getters și Setters
+
     public String getEmail() {
         return email;
     }

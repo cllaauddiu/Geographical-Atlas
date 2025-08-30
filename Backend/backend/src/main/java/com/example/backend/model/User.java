@@ -28,14 +28,12 @@ public class User {
     
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
-    
-    // Constructor implicit
+
     public User() {
         this.createdAt = LocalDateTime.now();
         this.updatedAt = LocalDateTime.now();
     }
-    
-    // Constructor cu parametri
+
     public User(String email, String password, String firstName, String lastName) {
         this();
         this.email = email;
@@ -43,8 +41,7 @@ public class User {
         this.firstName = firstName;
         this.lastName = lastName;
     }
-    
-    // Getters și Setters
+
     public Long getId() {
         return id;
     }

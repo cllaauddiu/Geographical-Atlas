@@ -13,21 +13,72 @@
   justify-content: center;
 }
 
+@media (max-width: 768px) {
+  .home-vanta-bg {
+    padding-top: 80px; /* Spațiu pentru navbar */
+  }
+}
+
 .home-content {
   position: relative;
   z-index: 1;
   color: #222;
   text-align: center;
-  background: rgba(255,255,255,0.7);
+   background: rgba(255,255,255,0.9);
   border-radius: 18px;
-  padding: 2rem 1.5rem;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  padding: 2.5rem 2rem;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.12);
   max-width: 90vw;
+  backdrop-filter: blur(10px);
 }
 
-@media (max-width: 600px) {
+.home-content h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: #2a7ae4;
+  font-weight: 700;
+}
+
+.home-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #555;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
   .home-content {
-    padding: 1.2rem 0.5rem;
+    padding: 2rem 1.5rem;
+    max-width: 90vw;
+    margin: 1rem;
+  }
+
+  .home-content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .home-content p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-content {
+    padding: 1.5rem 1rem;
+    max-width: 95vw;
+    margin: 0.5rem;
+    border-radius: 12px;
+  }
+
+  .home-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .home-content p {
     font-size: 1rem;
+    margin-bottom: 1.2rem;
   }
 }

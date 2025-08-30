@@ -1,9 +1,13 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 import "./Login.css";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+  const { login } = useAuth();
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -17,10 +21,10 @@ export default function Login() {
       });
       const data = await response.json();
       if (data.success) {
-        alert("Autentificare reușită! Bine ai venit, " + data.data.firstName + "!");
-        // Poți salva userul în localStorage dacă vrei:
-        // localStorage.setItem('user', JSON.stringify(data.data));
-        // Redirecționează utilizatorul dacă vrei
+        // Folosește funcția login din context pentru a salva utilizatorul
+        login(data.data);
+        // Redirecționează utilizatorul pe pagina principală
+        navigate('/');
       } else {
         alert(data.message || "Eroare la autentificare");
       }

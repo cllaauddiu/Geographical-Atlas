@@ -17,11 +17,7 @@ public class UserController {
     
     @Autowired
     private UserService userService;
-    
-    /**
-     * Returnează toți utilizatorii
-     * GET /api/users
-     */
+
     @GetMapping
     public ResponseEntity<ApiResponse<List<User>>> getAllUsers() {
         try {
@@ -31,11 +27,7 @@ public class UserController {
             return ResponseEntity.badRequest().body(ApiResponse.error(e.getMessage()));
         }
     }
-    
-    /**
-     * Returnează un utilizator după ID
-     * GET /api/users/{id}
-     */
+
     @GetMapping("/{id}")
     public ResponseEntity<ApiResponse<User>> getUserById(@PathVariable Long id) {
         try {
@@ -49,11 +41,7 @@ public class UserController {
             return ResponseEntity.badRequest().body(ApiResponse.error(e.getMessage()));
         }
     }
-    
-    /**
-     * Returnează un utilizator după email
-     * GET /api/users/email/{email}
-     */
+
     @GetMapping("/email/{email}")
     public ResponseEntity<ApiResponse<User>> getUserByEmail(@PathVariable String email) {
         try {
@@ -67,11 +55,7 @@ public class UserController {
             return ResponseEntity.badRequest().body(ApiResponse.error(e.getMessage()));
         }
     }
-    
-    /**
-     * Actualizează un utilizator
-     * PUT /api/users/{id}
-     */
+
     @PutMapping("/{id}")
     public ResponseEntity<ApiResponse<User>> updateUser(@PathVariable Long id, @RequestBody UserRegistrationDto updateDto) {
         try {
@@ -81,11 +65,7 @@ public class UserController {
             return ResponseEntity.badRequest().body(ApiResponse.error(e.getMessage()));
         }
     }
-    
-    /**
-     * Șterge un utilizator
-     * DELETE /api/users/{id}
-     */
+
     @DeleteMapping("/{id}")
     public ResponseEntity<ApiResponse<String>> deleteUser(@PathVariable Long id) {
         try {

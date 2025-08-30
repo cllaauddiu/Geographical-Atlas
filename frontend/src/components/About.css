@@ -8,6 +8,12 @@
   z-index: 1;
 }
 
+@media (max-width: 768px) {
+  .about-container {
+    padding-top: 5rem; /* Spațiu pentru navbar */
+  }
+}
+
 .about-intro {
   font-size: 1.2rem;
   margin-bottom: 2rem;
@@ -81,5 +87,71 @@
   .about-card {
     width: 95vw;
     max-width: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    padding: 2rem 1rem 1.5rem 1rem;
+  }
+
+  .about-intro {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-card {
+    width: 90vw;
+    max-width: 320px;
+    padding: 1.2rem 1rem;
+    min-height: 200px;
+  }
+
+  .about-icon {
+    font-size: 2.2rem;
+  }
+
+  .about-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .about-card p, .about-card ul {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-container {
+    padding: 1.5rem 0.8rem 1rem 0.8rem;
+  }
+
+  .about-intro {
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .about-cards {
+    gap: 1rem;
+  }
+
+  .about-card {
+    width: 95vw;
+    max-width: 300px;
+    padding: 1rem 0.8rem;
+    min-height: 180px;
+  }
+
+  .about-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .about-card h3 {
+    font-size: 1.1rem;
+    margin: 0.3rem 0 0.5rem 0;
+  }
+
+  .about-card p, .about-card ul {
+    font-size: 0.9rem;
   }
 }

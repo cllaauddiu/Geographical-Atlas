@@ -8,14 +8,8 @@ import java.util.Optional;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
-    
-    /**
-     * Găsește un utilizator după email
-     */
+
     Optional<User> findByEmail(String email);
-    
-    /**
-     * Verifică dacă există un utilizator cu email-ul dat
-     */
+
     boolean existsByEmail(String email);
 } 

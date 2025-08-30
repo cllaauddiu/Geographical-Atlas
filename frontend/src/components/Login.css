@@ -94,9 +94,66 @@
   text-decoration: underline;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .login-card {
-    padding: 1.2rem 0.5rem;
+    padding: 2rem 1.5rem;
+    min-width: 85vw;
+    max-width: 400px;
+  }
+
+  .login-card h2 {
+    font-size: 1.8rem;
+  }
+
+  .login-field {
+    padding: 0.4rem 1rem;
+  }
+
+  .login-field input {
+    font-size: 1rem;
+  }
+
+  .login-btn {
+    padding: 0.8rem 0;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-card {
+    padding: 1.5rem 1rem;
     min-width: 90vw;
+    margin: 1rem;
+  }
+
+  .login-card h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .login-field {
+    padding: 0.3rem 0.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .login-field input {
+    font-size: 0.95rem;
+    padding: 0.5rem 0;
+  }
+
+  .login-icon {
+    font-size: 1.2rem;
+    margin-right: 0.6rem;
+  }
+
+  .login-btn {
+    padding: 0.7rem 0;
+    font-size: 1rem;
+    margin-top: 0.3rem;
+  }
+
+  .login-links {
+    font-size: 0.9rem;
+    text-align: center;
   }
 }

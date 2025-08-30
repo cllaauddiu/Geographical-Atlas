@@ -11,16 +11,13 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/auth")
-@CrossOrigin(origins = "*") // Permite CORS pentru frontend
+@CrossOrigin(origins = "*")
 public class AuthController {
     
     @Autowired
     private UserService userService;
-    
-    /**
-     * Endpoint pentru înregistrarea utilizatorilor
-     * POST /api/auth/register
-     */
+
+    //endpoint pentru inregistrare
     @PostMapping("/register")
     public ResponseEntity<ApiResponse<User>> register(@RequestBody UserRegistrationDto registrationDto) {
         try {
@@ -30,11 +27,7 @@ public class AuthController {
             return ResponseEntity.badRequest().body(ApiResponse.error(e.getMessage()));
         }
     }
-    
-    /**
-     * Endpoint pentru autentificarea utilizatorilor
-     * POST /api/auth/login
-     */
+
     @PostMapping("/login")
     public ResponseEntity<ApiResponse<User>> login(@RequestBody LoginDto loginDto) {
         try {
@@ -44,11 +37,7 @@ public class AuthController {
             return ResponseEntity.badRequest().body(ApiResponse.error(e.getMessage()));
         }
     }
-    
-    /**
-     * Endpoint pentru testare - verifică dacă API-ul funcționează
-     * GET /api/auth/test
-     */
+
     @GetMapping("/test")
     public ResponseEntity<ApiResponse<String>> test() {
         return ResponseEntity.ok(ApiResponse.success("API-ul funcționează!", "Backend is running"));
