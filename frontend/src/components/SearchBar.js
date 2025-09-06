@@ -11,13 +11,11 @@ export default function SearchBar() {
     e.preventDefault();
     if (!input.trim()) return;
 
-    // Pentru imagine, doar UI (MVP)
     if (searchType === "image") {
       alert("Funcționalitatea de căutare după imagine va fi disponibilă în curând!");
       return;
     }
 
-    // Redirect cu query string
     navigate(`/map?type=${searchType}&q=${encodeURIComponent(input)}`);
   };
 

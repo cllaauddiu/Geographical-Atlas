@@ -18,7 +18,7 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Overlay pentru a închide meniul când se face click în afara lui */}
+      {}
       {isMenuOpen && (
         <div className="navbar__overlay" onClick={() => setIsMenuOpen(false)}></div>
       )}
@@ -29,14 +29,14 @@ export default function Navbar() {
           <Link to="/" className="navbar__brand">INFOTerra</Link>
         </div>
         
-        {/* Hamburger menu pentru mobile */}
+        {}
         <button className="navbar__hamburger" onClick={toggleMenu}>
           <span className={`hamburger-line ${isMenuOpen ? 'open' : ''}`}></span>
           <span className={`hamburger-line ${isMenuOpen ? 'open' : ''}`}></span>
           <span className={`hamburger-line ${isMenuOpen ? 'open' : ''}`}></span>
         </button>
 
-        {/* Meniul principal - ascuns pe mobile când este închis */}
+        {}
         <div className={`navbar__menu ${isMenuOpen ? 'open' : ''}`}>
           <div className="navbar__links">
             <Link to="/" className="navbar__link" onClick={() => setIsMenuOpen(false)}>Acasă</Link>

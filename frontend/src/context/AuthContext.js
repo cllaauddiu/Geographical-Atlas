@@ -15,7 +15,6 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Verifică dacă există un utilizator salvat în localStorage la încărcarea aplicației
     const savedUser = localStorage.getItem('user');
     if (savedUser) {
       try {

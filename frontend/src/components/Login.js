@@ -21,9 +21,7 @@ export default function Login() {
       });
       const data = await response.json();
       if (data.success) {
-        // Folosește funcția login din context pentru a salva utilizatorul
         login(data.data);
-        // Redirecționează utilizatorul pe pagina principală
         navigate('/');
       } else {
         alert(data.message || "Eroare la autentificare");

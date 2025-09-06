@@ -24,6 +24,7 @@ export default function Home() {
         backgroundColor: 0xe3f0ff, 
         glow: 0.5,
         size: 1.2,
+        vertexColors: false,
       });
     }
     return () => {

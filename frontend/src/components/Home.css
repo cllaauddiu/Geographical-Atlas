@@ -1,4 +1,4 @@
-/* frontend/src/components/Home.css */
+
 .home-vanta-bg {
   width: 100vw;
   height: 100vh;
@@ -15,7 +15,7 @@
 
 @media (max-width: 768px) {
   .home-vanta-bg {
-    padding-top: 80px; /* Spațiu pentru navbar */
+    padding-top: 80px;
   }
 }
 
